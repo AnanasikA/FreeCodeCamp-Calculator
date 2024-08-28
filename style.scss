@@ -1,0 +1,60 @@
+$bg-color: #282c34;
+$btn: #61dafb;
+$text-color: #fff;
+$equal-btn-color: #ff4500;
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: $bg-color;
+}
+
+.calculator {
+    background: $bg-color;
+    border: 2px solid $text-color;
+    border-radius: 8px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+
+    .display {
+        grid-column: span 4;
+        background: $text-color;
+        color: $bg-color;
+        font-size: 2rem;
+        padding: 10px;
+        text-align: right;
+        border-radius: 4px;
+    }
+
+    button {
+        font-size: 1.5rem;
+        padding: 20px;
+        background: $btn;
+        color: $bg-color;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transform: background 0.3s ease;
+
+        &:hover {
+            background: lighten($btn, 10%);
+        }
+    }
+
+    .equals {
+        grid-column: span 2;
+        background: $equal-btn-color;
+        color: $text-color;
+
+        &:hover {
+            background: darken($equal-btn-color, 10%);
+        }
+    }
+}
+
